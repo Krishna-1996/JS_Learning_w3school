@@ -4,7 +4,7 @@
 // ******** //
 
 // #1. Write a JavaScript function that reverses a number.
-const prompt=require("prompt-sync")({sigint:true}); 
+const prompt = require("prompt-sync")({ sigint: true });
 /*var num = prompt("Enter: ");//Input from user
 function reverse_a_num(num)//function name
 {
@@ -30,9 +30,9 @@ function palindrome(word){
 console.log(palindrome(word));*/
 
 // #3. Write a JavaScript function that generates all combinations of a string.
-        //Example string : 'dog'
-        //Expected Output : d,do,dog,o,og,g
-        //APPROACH 1:: Use .push() and .slice() method
+//Example string : 'dog'
+//Expected Output : d,do,dog,o,og,g
+//APPROACH 1:: Use .push() and .slice() method
 /*
 var one_word = prompt("Enter: ");//Input from user
 let possible_Combinations = (str) => {//function
@@ -78,8 +78,8 @@ function alphabet_order(str) {
   console.log(alphabet_order(str));
   */
 
- // #5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into upper case
-
+// #5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into upper case
+/*
 var sentence = prompt("Enter: ");//Input from user
 function capitalize_First_Letter(text) {
     //Split the given text by space " ".
@@ -95,22 +95,43 @@ function capitalize_First_Letter(text) {
   }
   const text = sentence;
   console.log(capitalize_First_Letter(text));
-  
+  */
 
+//#6. Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
+/*
+  var main_Sentence = prompt("Enter: ");//Input from user
+  function find_longest_word(str)
+  {
+    var array1 = str.match(/\w[a-z]{0,}/gi);
+    var array1 = str.match()
+    var result = array1[0];
+    for(var x = 1 ; x < array1.length ; x++)
+    {
+      if(result.length < array1[x].length)
+      {
+      result = array1[x];
+      } 
+    }
+    return result;
+  }
+  console.log(find_longest_word(main_Sentence));
+  */
+//#7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+var main_Sentence = prompt("Enter: "); //Input from user
+function count_vowel(str) {
+  var vowel_list = "aeiouAEIOU";
+  var count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (vowel_list.indexOf(str[i]) !== -1) {
+      //************** */
+      count += 1;
+    }
+  }
+  return count;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// alternativ approach using regexp.
+  var vowel = str.match(/[aeiouAeiou]/gi)
+  return vowel == null ? 0 : vowel.length;
+}
+console.log("First method: "+ count_vowel(main_Sentence));
+console.log("Alternative method: "+ count_vowel(main_Sentence));
