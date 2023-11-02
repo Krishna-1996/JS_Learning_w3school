@@ -117,21 +117,110 @@ function capitalize_First_Letter(text) {
   console.log(find_longest_word(main_Sentence));
   */
 //#7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+/*
 var main_Sentence = prompt("Enter: "); //Input from user
 function count_vowel(str) {
   var vowel_list = "aeiouAEIOU";
   var count = 0;
   for (let i = 0; i < str.length; i++) {
     if (vowel_list.indexOf(str[i]) !== -1) {
-      //************** */
+      //
       count += 1;
     }
   }
   return count;
+}
+console.log("First method: " + count_vowel(main_Sentence));
 
 // alternativ approach using regexp.
-  var vowel = str.match(/[aeiouAeiou]/gi)
-  return vowel == null ? 0 : vowel.length;
+function vowel_count(strg){
+  //create variable and store the matching char with aeiouAeiou in strg
+  var vowel = strg.match(/[aeiouAeiou]/gi)
+  if(vowel== null){
+    return 0;
+  }
+  else {
+    return ("new"+ vowel.length)
+  }
+  //return vowel == null ? 0 : vowel.length;
 }
-console.log("First method: "+ count_vowel(main_Sentence));
-console.log("Alternative method: "+ count_vowel(main_Sentence));
+console.log("Alternative method: "+ vowel_count(main_Sentence));
+*/
+//#8. Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not.
+/*
+var num = prompt("Enter: "); //Input from user
+function prime(num) {
+  if (num <= 1) {
+     console.log(num + " is not a prime number.");
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      console.log(num + " is not a prime number.");
+      return false;
+    }
+  }
+  console.log(num + " is a Prime number.");
+  return true;
+}
+
+console.log(prime(num));
+*/
+
+//#9. Write a JavaScript function that accepts an argument and returns the type.
+/*
+var value = prompt("Enter: "); //Input from user
+function datatype(value) {
+  var dtypes = [Function, RegExp, Number, String, Boolean, Object],
+    x,
+    len;
+
+  if (typeof value === "object" || typeof value === "function") {
+    for (x = 0, len = dtypes.length; x < len; x++) {
+      if (value instanceof dtypes[x]) {
+        return dtypes[x];
+      }
+    }
+  }
+
+  return typeof value;
+}
+console.log(datatype(value));
+*/
+
+// #10. Write a JavaScript function which returns the n rows by n columns identity matrix.
+/*
+  var value = prompt("Enter: "); //Input from user
+function martrix(n){
+  var i;
+  var j;
+
+  for (i=0; i<n; i++){
+    for (j=0; j<n; j++){
+      if(i==j){
+        console.log('1')
+      }
+      else{
+        console.log('0')
+      }
+      console.log('----------')
+    }
+  }
+}
+
+martrix(value)
+*/
+
+// #11. Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest numbers, respectively.
+/*
+var input = prompt("Enter: "); //Input from user
+
+function Second_Greatest_Lowest(input){
+  // First sort the array in ascending order
+  input.sort(function(a,b){
+    return a - b;
+  })
+  // Get the 2nd lowest number by access index 1
+  let secondLowest = input[1]
+}
+*/

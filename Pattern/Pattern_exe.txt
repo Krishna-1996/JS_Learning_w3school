@@ -1,0 +1,1055 @@
+Patterns in JavaScript
+********************************************
+Example 1: Triangle Pattern - I
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+Approach:
+
+We can see that we need to run a loop for a row number of times. 
+We need to run a loop for 5 rows in the example here. 
+This forms the external loop.
+We need to run a loop to print n numbers in each row, where n is the row number. 
+This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows).
+For each row, we need to print numbers from num = 1 to num = n.
+Example : For the 5th row, n = 5. The internal loop goes from num = 1 to num = 5. The 5th row becomes: 1 2 3 4 5
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // inner loop runs for n
+   for (let num = 1; num <= n; num++) {
+      pattern += num;
+   }
+
+   // Add a new line character after contents of each line
+   pattern += "\n";
+}
+console.log(pattern);
+
+Code Explanation:
+Line : 1
+We define the number of rows. If we want the pattern to have 10 rows, we can simply change the value of rows to 10 and get this output :
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+12345678910
+
+Line : 4
+Initially, our pattern is an empty string. We append numbers to this string to form the final number pattern inside the nested loop.
+Line : 7-15
+Here goes the outer loop. It runs from n = 1 to n = number of rows.
+Line : 9-11
+This includes the inner loop. The numbers are printed from 1 to the row number for each row.
+Line: 16
+Finally, the pattern built is printed to the console.
+
+********************************************
+Example 2: Triangle Pattern - II
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+Approach:
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+We need to run a loop to print n numbers in each row, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). We need to print the row number n number of times for each row, where n is the row number.
+Example : For the 5th row, n = 5. The internal loop goes from num = 1 to num = 5 and prints the row number (i.e. 5). The 5th row becomes: 5 5 5 5 5.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= n; num++) {
+      pattern += n;
+   }
+
+   // Add a new line character after contents of each line
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 3 : Triangle Pattern - III
+
+1
+2 3
+4 5 6
+7 8 9 10
+
+Approach:
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 4 rows in the example here. This forms the external loop.
+We need to run a loop to print n numbers in each row, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). We need to print the next n numbers of the series for each row.
+What is the series followed? The series of first n numbers. We declare a variable in the beginning and keep on incrementing it.
+Example : For the 4th row, n = 4. The internal loop goes from num = 1 to num = 4. We need to print the next 4 numbers of the series. The last number printed in the 3rd row was 6. Hence, the 5th row is : 7 8 9 10.
+Code:
+
+let rows = 4;
+
+// variable contains the next element of the pattern
+let variable = 1;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= n; num++) {
+      pattern += variable+" ";
+      variable++;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 4: Reverse Triangle - I
+
+12345
+1234
+123
+12
+1
+
+Approach:
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print 6-n numbers, where n is the row number. This forms the internal loop.
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 6-n numbers in order.
+Example: For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 6-3 = 3. We need to print (6-n) i.e. (6-3) 3 numbers in order. So, out 3rd row becomes: 1 2 3.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 6 - n; num++) {
+      pattern += num;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 5: Number Pyramid Pattern - I
+
+    1
+   123
+  12345
+ 1234567
+123456789
+
+Approach:
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+
+In each row, we need to run a loop to print 
+2
+∗
+�
+−
+1
+2∗n−1 numbers, where n is the row number. This forms the internal loop.
+
+For each row, we have 2 components:
+
+The starting spaces.
+Numbers in order.
+If n is the row number, and row is the total number of rows, spaces: No. of spaces in each row : 
+(
+�
+�
+�
+−
+�
+)
+(row−n) Numbers : From 1 to 
+(
+2
+∗
+�
+−
+1
+)
+(2∗n−1)
+
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print spaces and numbers.
+
+Example: For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 3. We need to print 
+(
+�
+−
+�
+�
+�
+)
+(n−row) i.e. 
+(
+5
+−
+3
+)
+(5−3) = 
+2
+2 spaces followed by number from 
+1
+1 to 
+2
+∗
+3
+−
+1
+2∗3−1 = 
+5
+5. So, out 3rd row becomes: __12345. {space is denoted by _ here}
+
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // Inner Loop - I -> for the spaces
+   for (let space = 1; space <= rows - n; space++) {
+      pattern += " ";
+   }
+
+   // Inner Loop - II -> for the numbers
+   for (let num = 1; num <= 2 * n - 1; num++) {
+      pattern += num;
+   }
+
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 6 : Number Pyramid Pattern - II
+
+  1
+ 234
+56789
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 3 rows in the example here. This forms the external loop.
+
+We need to run a loop to print n numbers in each row, where n is the row number. This forms the internal loop.
+
+In this example above, we have 3 rows. For 3 rows, we need an external loop that goes from n = 1 to n = 3 (i.e. no of rows). We need to print the next n numbers of the series for each row.
+
+What is the series followed ? The series of first n numbers. We declare a variable in the beginning and keep on incrementing it.
+
+For each row, we have 2 components :
+
+The starting spaces.
+Numbers in order.
+If n is the row number, and rows is the total number of rows, spaces : No. of spaces in each row : 
+(
+�
+�
+�
+�
+−
+�
+)
+(rows−n) Numbers : No. of numbers in each row : 
+(
+2
+∗
+�
+−
+1
+)
+(2∗n−1)
+
+Example: For the 2nd row, n = 2. The internal loop goes from space = 1 to space 
+=
+3
+−
+2
+=
+1
+=3−2=1, and num = 1 to num = 
+2
+∗
+2
+−
+1
+=
+3
+2∗2−1=3. We need to print the next 3 numbers of the series. The last number printed in the 1st row was 1. Hence, the 5th row is : 2 3 4.
+
+Code:
+
+let rows = 3;
+let variable = 1;
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // Inner Loop - I -> for the spaces
+   for (let space = 1; space <= rows - n; space++) {
+      pattern += " ";
+   }
+
+   // Inner Loop - II -> for the series of numbers
+   for (let num = 1; num <= 2 * n - 1; num++) {
+      pattern += variable;
+      variable++;
+   }
+
+   pattern += "\n";
+}
+console.log(pattern);
+
+Star Patterns
+When a series of stars (*) are arranged to create a pattern or a particular shape, like pyramids, triangles, etc., it forms a star pattern. You should practice star patterns to get a good hand at loops and nested loops.
+
+We'll look at some examples to understand star patterns in depth.
+
+********************************************
+Example 1 : Square Star Pattern - I
+
+*****
+*****
+*****
+*****
+*****
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+We need to run a loop to print 5 stars in each row. This forms the internal loop.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // Inner loop for printing stars
+   for (let num = 1; num <= 5; num++) {
+      pattern += "*";
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 2 : Hollow Square Star Pattern
+
+*****
+*   *
+*   *
+*   *
+*****
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print starting and ending stars (only in case the row number is not 0 or the last row). This forms the internal loop.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 5; num++) {
+      // print star only if it is the boundary location
+      if (n == 1 || n == rows) pattern += "*";
+      else {
+         if (num == 1 || num == 5) {
+            pattern += "*";
+         } else {
+            pattern += " ";
+         }
+      }
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 3 : Right Triangle Pattern
+
+    *
+   **
+  ***
+ ****
+*****
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+
+In each row, we need to run a loop to print n no. of stars, where n is the row number. This forms the internal loop.
+
+For each row, we have 2 components :
+
+The starting spaces.
+Stars.
+If n is the row number, and rows is the total number of rows, spaces : No. of spaces in each row : 
+(
+�
+�
+�
+�
+−
+�
+)
+(rows−n) Stars : From 1 to n
+
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print spaces and stars.
+
+Example : For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 3. We need to print 
+(
+�
+−
+�
+�
+�
+)
+(n−row) 
+�
+.
+�
+.
+i.e. 
+(
+5
+−
+3
+)
+=
+2
+(5−3)=2 spaces followed by 3 stars. So, out 3rd row becomes : __***. {space is denoted by _ here}
+
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // Inner loop - I -> prints spaces
+   for (let space = 1; space <= rows - n; space++) {
+      pattern += " ";
+   }
+
+   // Inner Loop - II -> prints stars
+   for (let num = 1; num <= n; num++) {
+      pattern += "*";
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 4 : Left Triangle Pattern
+
+*
+**
+***
+****
+*****
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print n no. of stars, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print n stars.
+Example : For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 3. We need to print 3 stars. So, our 3rd row becomes : ***.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // print stars for n number of times in each row
+   for (let num = 1; num <= n; num++) {
+      pattern += "*";
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 5 : Pyramid Triangle Pattern
+
+    *
+   ***
+  *****
+ *******
+*********
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+
+In each row, we need to run a loop to print n no. of stars, where n is the row number. This forms the internal loop.
+
+For each row, we have 2 components :
+
+The starting spaces.
+Numbers in order.
+If n is the row number, and row is the total number of rows, spaces : No. of spaces in each row : 
+(
+�
+�
+�
+−
+�
+)
+(row−n) Stars : No. of stars : 
+(
+2
+∗
+�
+−
+1
+)
+(2∗n−1)
+
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print spaces and stars.
+
+Example: For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 3. We need to print 
+(
+�
+−
+�
+�
+�
+)
+(n−row) 
+�
+.
+�
+.
+i.e. 
+(
+5
+−
+3
+)
+=
+2
+(5−3)=2 spaces followed by 
+(
+2
+∗
+�
+−
+1
+)
+=
+6
+−
+1
+=
+5
+(2∗n−1)=6−1=5 stars. So, out 3rd row becomes : __*****. {space is denoted by _ here}
+
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // Inner Loop - I -> prints spaces
+   for (let space = 1; space <= rows - n; space++) {
+      pattern += " ";
+   }
+
+   // Inner Loop - II -> prints stars
+   for (let num = 1; num <= 2 * n - 1; num++) {
+      pattern += "*";
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+Triangular Pattern (With Numbers and Stars)
+Let us look at some more triangular patterns using both numbers and stars.
+
+********************************************
+Example 1 : Reverse Triangle - I
+
+54321
+5432
+543
+54
+5
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print 6-n numbers, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). We need to print n numbers for each row, starting with 5 (no of rows) and decrementing.
+Example : For the 3rd row, n = 3. The internal loop goes from num = 5 to num = 3. We need to print n, 
+�
+.
+�
+.
+i.e., 3 numbers starting 5 and decrementing. So, our 3rd row becomes : 5 4 3.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = rows; num >= n; num--) {
+      pattern += num;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 2 : Reverse Triangle - I
+
+54321
+4321
+321
+21
+1
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the 6-n numbers, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 
+6
+−
+�
+6−n numbers in reverse order.
+Example : For the 3rd row, n = 3. The internal loop goes from num 
+=
+6
+−
+3
+=
+3
+=6−3=3 to num = 1. We need to print 
+(
+6
+−
+�
+)
+(6−n) 
+�
+.
+�
+.
+i.e. 
+(
+6
+−
+3
+)
+(6−3) 3 numbers in reverse order. So, out 3rd row becomes : 3 2 1.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // print 6-n stars
+   for (let num = 6 - n; num >= 1; num--) {
+      pattern += num;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 3 : Hollow Triangle Star Pattern
+
+*
+**
+* *
+*  *
+*   *
+******
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print n no. of stars, where n is the row number. This forms the internal loop.
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print boundary stars.
+We need to see if the current position is the boundary position for the internal loop. We need to add a star, else a space.
+Example : For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 3. We need to print boundary stars. So, our 3rd row becomes : *_*. (space is represented as _ here).
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= n; num++) {
+      // Print only boundary stars
+      if (num === 1 || num === n || n === rows) pattern += "*";
+      else {
+         pattern += " ";
+      }
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 4 : Downward Triangle Star Pattern
+
+*****
+****
+***
+**
+*
+
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print n no. of stars, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 6-n stars.
+Example : For the 3rd row, n = 5. The internal loop goes from num = 1 to num 
+=
+6
+−
+5
+=
+1
+=6−5=1. We need to print 3 stars. So, our 3rd row becomes : *.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 6 - n; num++) {
+      pattern += "*";
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+Character Patterns
+Character Patterns are the same as the patterns discussed above, except that we use characters to form patterns of different shapes instead of using stars or numbers.
+
+Let us look at some examples to practice character patterns in javascript.
+
+********************************************
+Example 1 : Triangle Pattern
+
+A
+AA
+AAA
+AAAA
+AAAAA
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the n characters, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print characters from num = 1 to num = n.
+Example : For the 5th row, n = 5. The internal loop goes from num = 1 to num = 5. The 5th row becomes : AAAAA.
+Code:
+
+let rows = 5;
+let char = "A";
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   // prints the character n times in each row
+   for (let num = 1; num <= n; num++) {
+      pattern += char;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 2 : Reverse Triangle
+
+AAAAA
+AAAA
+AAA
+AA
+A
+
+Approach :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the 6-n characters, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 
+6
+−
+�
+6−n characters.
+Example: For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 6-3 = 3. We need to print 
+(
+6
+−
+�
+)
+(6−n) 
+�
+.
+�
+.
+i.e. 
+(
+6
+−
+3
+)
+(6−3) 3 characters. So, out 3rd row becomes : AAA.
+Code:
+
+let rows = 5;
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+let char = "A";
+
+// outer loop runs for `rows` no. of times
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 6 - n; num++) {
+      pattern += char;
+   }
+   pattern += "\n";
+}
+console.log(pattern);
+
+********************************************
+Example 3 : Inverse Triangle Pyramid
+
+$
+$$
+$$$
+$$$$
+%%%%%
+%%%%
+%%%
+%%
+%
+
+Approach :
+
+Two different cases are joined together to form this pattern. Hence, we'll have to use 2 loops - one for the upper triangle and the second for the inverse triangle.
+
+For the first triangle :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the n characters, where n is the row number. This forms the internal loop.
+In this example above, we have 4 rows. For 4 rows, we need an external loop that goes from n = 1 to n = 4 (i.e. no of rows). For each row, we need to print characters from num = 1 to num = n.
+Example : For the 4th row, n = 4. The internal loop goes from num = 1 to num = 4. The 4th row becomes : $$$$
+For the second reverse triangle :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the 6-n characters, where n is the row number. This forms the internal loop.
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 
+6
+−
+�
+6−n characters.
+Example: For the 3rd row, n = 3. The internal loop goes from num = 1 to num = 
+6
+−
+3
+=
+3
+6−3=3. We need to print 
+(
+6
+−
+�
+)
+(6−n) 
+�
+.
+�
+.
+i.e. 
+(
+6
+−
+3
+)
+(6−3) 3 characters. So, out 3rd row becomes %%%.
+Code:
+
+let rows = 5;
+let char1 = "$";
+let char2 = "%";
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop - I -> runs for `rows-1` no. of times
+// forms a character triangle
+for (let n = 1; n <= rows - 1; n++) {
+   for (let num = 1; num <= n; num++) {
+      pattern += char1;
+   }
+   pattern += "\n";
+}
+
+// outer loop - II -> runs for `rows` no. of times
+// forms an inverse character triangle
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 6 - n; num++) {
+      pattern += char2;
+   }
+   pattern += "\n";
+}
+
+console.log(pattern);
+
+********************************************
+Example : 4
+
+AAAAA
+AAAA
+AAA
+AA
+A
+
+B
+BB
+BBB
+BBBB
+BBBBB
+
+Approach :
+
+Two different cases are joined together to form this pattern. Hence, we'll have to use 2 loops : one for the upper triangle and the second for the inverse triangle.
+
+For the first triangle :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the 6-n characters, where n is the row number. This forms the internal loop.
+In this example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print 
+6
+−
+�
+6−n characters.
+Example : For the 3rd row, n = 3. The internal loop goes from num = 1 to num 
+=
+6
+−
+3
+=
+3
+=6−3=3. We need to print 
+(
+6
+−
+�
+)
+(6−n) 
+�
+.
+�
+.
+i.e. 
+(
+6
+−
+3
+)
+(6−3) 3 characters. So, out 3rd row becomes : AAA.
+For the second reverse triangle :
+
+We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+In each row, we need to run a loop to print the n characters, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows). For each row, we need to print characters from num = 1 to num = n.
+Example : For the 4th row, n = 4. The internal loop goes from num = 1 to num = 4. The 4th row becomes : AAAA
+Code:
+
+let rows = 5;
+let char1 = "A";
+let char2 = "B";
+
+// pattern variable carries the final pattern in string format
+let pattern = "";
+
+// outer loop - I -> runs for `rows` no. of times
+// forms an inverse character triangle with 'A'.
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= 6 - n; num++) {
+      pattern += char1;
+   }
+   pattern += "\n";
+}
+pattern += "\n";
+
+// outer loop - II -> runs for `rows` no. of times
+// forms a character triangle with 'B'.
+for (let n = 1; n <= rows; n++) {
+   for (let num = 1; num <= n; num++) {
+      pattern += char2;
+   }
+   pattern += "\n";
+}
+
+console.log(pattern);
