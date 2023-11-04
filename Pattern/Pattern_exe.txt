@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 Patterns in JavaScript
 ********************************************
 Example 1: Triangle Pattern - I

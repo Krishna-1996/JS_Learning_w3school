@@ -95,7 +95,7 @@ for (let n = 1; n <= rows; n++) {
    pattern += "\n";
 }
 console.log(pattern);
-*/
+
 var input = prompt("Enter the value: ");
 var row = parseInt(input)+ 1;
 var num = "";
@@ -106,5 +106,80 @@ for (let i = 1; i <= input; i++) {
   num += "\n";
 }
 console.log(num);
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 150) + 1;
+}
+
+// Generate 5 random numbers
+for (var i = 0; i < 5; i++) {
+  console.log(getRandomNumber());
+}
+
+//Write a JavaScript program to get the website URL (loading page)
+alert(document.URL);
+*/
+// *************************************************
+// Write a program to check whether a specified character exists between the 2nd and 4th positions in a given string.
+//step1: write function to get random 15 character word/string.
+function genRandomString(str){
+  // allow char for search 
+  var characters = "abcdefghijklmnopqrstuvwxyz"
+  // variable  for random string with 15 char
+  var randomStr = "";
+  /*
+  for (let i = 0; i< str;i++){
+    //formula to generate random string(COULD REPEAT character in random)
+    randomStr += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+*/
+  for (let i = 0; i < str; i++) {
+    //formula to generate random string(will NOT REPEAT character in random)
+    var character = characters[Math.floor(Math.random() * characters.length)];
+    if (randomStr.indexOf(character) === -1){
+    //This -1 at last reduce one char that already added in randomstr
+      randomStr += character;
+    }
+  }
+  return randomStr;
+}
+var randomStr = genRandomString(15);
+console.log(randomStr);//get 15 random charcters
+// var array = Array.from(randomStr)
+var input = prompt("Enter the char: ");//your character
+console.log("You had Choosen: '"+input+"'");
+//create a function to search your charater in randon 15 character
+function checkCharInArray(input){
+    if(randomStr.includes(input)){
+      console.log("the character "+input+" is present in given string.")
+    }else{
+      console.log("the character "+input+" is NOT present in given string.")
+    }
+}
+checkCharInArray(input)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // END OF THE EXERCISE
