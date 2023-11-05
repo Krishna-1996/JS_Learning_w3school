@@ -1,4 +1,4 @@
-JavaScript Objects
+<h1>JavaScript Objects</h1>
 In JavaScript, objects are king. If you understand objects, you understand JavaScript.
 
 In JavaScript, almost "everything" is an object.
