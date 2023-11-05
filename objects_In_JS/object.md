@@ -3,7 +3,7 @@
 
 <p>In JavaScript, almost "everything" is an object.</p>
 <ol>
-  Booleans can be objects (if defined with the new keyword)
+  Booleans can be objects (if defined with the new keyword
   Numbers can be objects (if defined with the new keyword)
   Strings can be objects (if defined with the new keyword)
   Dates are always objects
@@ -22,6 +22,7 @@ A primitive value is a value that has no properties or methods.
 A primitive data type is data that has a primitive value.
 
 JavaScript defines 7 types of primitive data types:
+
 <ol>
   Examples
   string
@@ -45,7 +46,7 @@ if x = 3.14, you can change the value of x, but you cannot change the value of 3
 <h6>null	      null (object)	  null is always null</h6>
 <h6>undefined	  undefined	      undefined is always undefined</h6>
 
-</h2>Objects are Variables</h2>
+<h2>Objects are Variables</h2>
 <h4>JavaScript variables can contain single values:</h4>
 
 Example
@@ -88,12 +89,12 @@ Object properties can be both primitive values, other objects, and functions.
 
 An object method is an object property containing a function definition.
 
-Property	Value
-firstName	John
-lastName	Doe
-age	50
-eyeColor	blue
-fullName	function() {return this.firstName + " " + this.lastName;}
+Property Value
+firstName John
+lastName Doe
+age 50
+eyeColor blue
+fullName function() {return this.firstName + " " + this.lastName;}
 JavaScript objects are containers for named values, called properties and methods.
 
 You will learn more about methods in the next chapters.
@@ -122,10 +123,10 @@ Spaces and line breaks are not important. An object definition can span multiple
 
 Example
 const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
+firstName: "John",
+lastName: "Doe",
+age: 50,
+eyeColor: "blue"
 };
 This example creates an empty JavaScript object, and then adds 4 properties:
 
@@ -155,7 +156,7 @@ Objects are mutable: They are addressed by reference, not by value.
 
 If person is an object, the following statement will not create a copy of person:
 
-const x = person;  // Will not create a copy of person.
+const x = person; // Will not create a copy of person.
 The object x is not a copy of person. It is person. Both x and person are the same object.
 
 Any changes to x will also change person, because x and person are the same object.00

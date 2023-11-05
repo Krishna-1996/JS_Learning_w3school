@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      JavaScript program to list the properties of a JavaScript object.
+    </title>
+  </head>
+  <body>
+    <script>
+      function getPropetyList(obj) {
+        var keys = [];
+        for (var key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            keys.push(key);
+          }
+        }
+        return keys;
+      }
+      var obj = {
+        fname: "Gargi",
+        lname: "sharma",
+        age: "3",
+      };
+      var keys = getPropetyList(obj);
+      console.log(keys);
+      console.log(obj.age);
+
+      function getObjLength(obj1){
+        var count = 0;
+        for (var key in obj1){
+            if(obj1.hasOwnProperty(key)){
+                count++;
+            }
+        }
+        return count
+      }
+      var obj1 = {
+        "a": 1,
+        "b": 2,
+        "c": 3,
+        "d": 4,
+        "e": 5,
+      }
+      var length  = getObjLength(obj1)
+      console.log("Length of na obj1 is: "+length)
+
+
+    </script>
+  </body>
+</html>
