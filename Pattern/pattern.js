@@ -118,68 +118,67 @@ for (var i = 0; i < 5; i++) {
 
 //Write a JavaScript program to get the website URL (loading page)
 alert(document.URL);
-*/
+
 // *************************************************
+
 // Write a program to check whether a specified character exists between the 2nd and 4th positions in a given string.
-//step1: write function to get random 15 character word/string.
-function genRandomString(str){
-  // allow char for search 
-  var characters = "abcdefghijklmnopqrstuvwxyz"
+  // write function to get random 15 character word/string.
+  function genRandomString(str) {
+  // allow char for search
+  var characters = "abcdefghijklmnopqrstuvwxyz";
   // variable  for random string with 15 char
   var randomStr = "";
-  /*
+  
   for (let i = 0; i< str;i++){
-    //formula to generate random string(COULD REPEAT character in random)
+    //formula to generate random string(MAY REPEAT character in random)
     randomStr += characters.charAt(Math.floor(Math.random() * characters.length));
   }
-*/
+
   for (let i = 0; i < str; i++) {
     //formula to generate random string(will NOT REPEAT character in random)
     var character = characters[Math.floor(Math.random() * characters.length)];
-    if (randomStr.indexOf(character) === -1){
-    //This -1 at last reduce one char that already added in randomstr
+    if (randomStr.indexOf(character) === -1) {
+      //This -1 at last reduce one char that already added in randomstr
       randomStr += character;
     }
   }
   return randomStr;
 }
 var randomStr = genRandomString(15);
-console.log(randomStr);//get 15 random charcters
+console.log("String: " + randomStr); //get 15 random charcters
 // var array = Array.from(randomStr)
-var input = prompt("Enter the char: ");//your character
-console.log("You had Choosen: '"+input+"'");
+var input = prompt("Enter the char: "); //your character
+console.log("You had Choosen: '" + input + "'");
 //create a function to search your charater in randon 15 character
-function checkCharInArray(input){
-    if(randomStr.includes(input)){
-      console.log("the character "+input+" is present in given string.")
-    }else{
-      console.log("the character "+input+" is NOT present in given string.")
-    }
+function checkCharInArray(input) {
+  if (randomStr.includes(input)) {
+    console.log("the character '" + input + "' is present in given string.");
+  } else {
+    console.log(
+      "the character '" + input + "' is NOT present in given string."
+    );
+  }
 }
-checkCharInArray(input)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+checkCharInArray(input);
 
 // END OF THE EXERCISE
+*/
+
+function apple(x,y){
+  console.log(x+y);
+  console.log(x*y); 
+  console.log(x+y+100); 
+}
+apple(4,5)
+
+const a = (x, y) => {return (x+y)+(x*y)+(x+y+39)}
+console.log(a(1,2))
+//E6 exercises 
+let text = "i live with cat and dogs and this is very import to love cat and dogs because dogs are way better than cat"
+console.log(text.replaceAll(/cat/g,"Orangess"))
+console.log(text.replaceAll(/dogs/g,"APPPLES"))
+const fruits = ["Banana", "Pineapple", "Mangoes", "Mango"];
+let fruit = fruits[2];//normal way
+let fruity = fruits.at(2);//using .at method in E6 
+console.log(fruit)
+console.log(fruity)
