@@ -1,50 +1,52 @@
 <h1>JavaScript Objects</h1>
-In JavaScript, objects are king. If you understand objects, you understand JavaScript.
+<h3>In JavaScript, objects are king. If you understand objects, you understand JavaScript.<h3>
 
-In JavaScript, almost "everything" is an object.
-
-Booleans can be objects (if defined with the new keyword)
-Numbers can be objects (if defined with the new keyword)
-Strings can be objects (if defined with the new keyword)
-Dates are always objects
-Maths are always objects
-Regular expressions are always objects
-Arrays are always objects
-Functions are always objects
-Objects are always objects
+<p>In JavaScript, almost "everything" is an object.</p>
+<ol>
+  Booleans can be objects (if defined with the new keyword)
+  Numbers can be objects (if defined with the new keyword)
+  Strings can be objects (if defined with the new keyword)
+  Dates are always objects
+  Maths are always objects
+  Regular expressions are always objects
+  Arrays are always objects
+  Functions are always objects
+  Objects are always objects
+</ol>
 All JavaScript values, except primitives, are objects.
 
-JavaScript Primitives
+<h2>JavaScript Primitives</h2>
 A primitive value is a value that has no properties or methods.
-
 3.14 is a primitive value
 
 A primitive data type is data that has a primitive value.
 
 JavaScript defines 7 types of primitive data types:
-
-Examples
-string
-number
-boolean
-null
-undefined
-symbol
-bigint
-Immutable
+<ol>
+  Examples
+  string
+  number
+  boolean
+  null
+  undefined
+  symbol
+  bigint
+</ol>
+<h2>Immutable</h2>
 Primitive values are immutable (they are hardcoded and cannot be changed).
 
 if x = 3.14, you can change the value of x, but you cannot change the value of 3.14.
 
-Value	Type	Comment
-"Hello"	string	"Hello" is always "Hello"
-3.14	number	3.14 is always 3.14
-true	boolean	true is always true
-false	boolean	false is always false
-null	null (object)	null is always null
-undefined	undefined	undefined is always undefined
-Objects are Variables
-JavaScript variables can contain single values:
+<h4>Value	      Type	          Comment</h4>
+<h6>"Hello"	    string	        "Hello" is always "Hello"</h6>
+<h6>3.14	      number	        3.14 is always 3.14</h6>
+<h6>true	      boolean	        true is always true</h6>
+<h6>false	      boolean	        false is always false</h6>
+<h6>null	      null (object)	  null is always null</h6>
+<h6>undefined	  undefined	      undefined is always undefined</h6>
+
+</h2>Objects are Variables</h2>
+<h4>JavaScript variables can contain single values:</h4>
 
 Example
 let person = "John Doe";
@@ -62,15 +64,16 @@ It is a common practice to declare objects with the const keyword.
 
 Example
 const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-ADVERTISEMENT
-Object Properties
-The named values, in JavaScript objects, are called properties.
 
-Property	Value
-firstName	John
-lastName	Doe
-age	50
-eyeColor	blue
+<h2>Object Properties</h2>
+The named values, in JavaScript objects, are called properties.
+<ol>
+  <h4>Property	  Value</h4>
+      firstName	  John
+      lastName	  Doe
+      age	        50
+      eyeColor	  blue
+</ol>
 Objects written as name value pairs are similar to:
 
 Associative arrays in PHP
